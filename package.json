@@ -1,0 +1,49 @@
+{
+  "name": "nextjs",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier . --check",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint .",
+    "lint:style": "stylelint **/*.{css,less,sass,scss,js,jsx,ts,tsx}",
+    "fix": "run-s fix:*",
+    "fix:eslint": "pnpm lint:eslint --fix",
+    "fix:style": "pnpm lint:style --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "next": "^11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
+    "@types/node": "^16.6.1",
+    "@types/react": "^17.0.18",
+    "eslint": "^7.32.0",
+    "eslint-config-like": "^2.1.1",
+    "eslint-config-next": "^11.1.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^5.0.0",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{css,js,jsx,ts,tsx}": "stylelint --fix",
+    "*": "prettier --check --write"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
+  }
+}
